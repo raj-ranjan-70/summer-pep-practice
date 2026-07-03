@@ -4,11 +4,15 @@ import Loader from "./components/Loader"
 import {useState} from "react";
 import Child1 from "./components/Child1";
 import Child2 from "./components/Child2";
+import StudentDataSave from "./components/StudentDataSave";
 
 function App() {
   const [value, setValue] = useState("");
   return (
     <>
+    <StudentDataSave />
+    <hr />
+    <br /> <br />
     <Child2 value={value} />
     <Child1 setValue={setValue} />
 
