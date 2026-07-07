@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 function WeatherInfoCard({ state }) {
   const url = "https://api.weatherapi.com/v1/current.json";
-  const API_KEY = '409cd42ea7654a79b1d82133260707'; // Replace with your API key
+  const API_KEY = import.meta.env.VITE_API_KEY; // Replace with your API key
 
   const [weatherData, setWeatherData] = useState(null);
 
@@ -17,7 +17,7 @@ function WeatherInfoCard({ state }) {
       .catch((error) => {
         console.error("Error fetching weather:", error);
       });
-  }, [state]);
+  }, [state, API_KEY]);
 
   if (!weatherData) {
     return null;
