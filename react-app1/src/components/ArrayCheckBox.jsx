@@ -24,7 +24,7 @@ function ArrayCheckBox() {
     }
     return ( 
         <>
-        <h1 className="text-3xl text-center text-fuchsia-900 bold mb-2 p-2">Total Head Count: {count}</h1>
+        <h1 className="text-3xl text-center text-fuchsia-900 bold mb-2 p-2">Total Count: {count}</h1>
         <div className="grid grid-cols-5 gap-2 list-disc list-inside">
         {studentList.map((ele) => {
             return (<li className="flex"><input type="checkbox" name={ele}  onChange={(e) => handleChange(e)}

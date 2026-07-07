@@ -8,6 +8,7 @@ import StudentDataSave from "./components/StudentDataSave";
 import SearchBar from "./components/SearchBar";
 import SearchResult from "./components/SearchResult";
 import ArrayCheckBox from "./components/ArrayCheckBox";
+import CountRender from "./components/CountRender";
 
 function App() {
   const [value, setValue] = useState("");
@@ -15,6 +16,7 @@ function App() {
   const arr = ["Raj", "Mayank", "Ayush", "Raushan", "Anurag", "Rohit", "Akash", "Nikhil", "Shubham"]
   return (
     <>
+    <CountRender />
     <ArrayCheckBox />
     <hr />
     <br /> <br /> 
