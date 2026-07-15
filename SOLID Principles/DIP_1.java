@@ -1,8 +1,8 @@
-Interface payment {
-    vioid pay();
+interface payment {
+    void pay();
 }
 
-Interface Notification {
+interface Notification {
     void send();
 }
 

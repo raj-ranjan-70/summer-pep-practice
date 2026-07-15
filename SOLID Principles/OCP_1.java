@@ -1,27 +1,27 @@
-Interface ShippingCalculator {
-    void calculateShipping() {}
+interface ShippingCalculator {
+    void calculateShipping();
 }
 
-class USShippingCalculator implements ShippingCalaulator {
+class USShippingCalculator implements ShippingCalculator {
 
     @Override
-    void calculateShipping() {
+    public void calculateShipping() {
         // Code to calculate US shipping...
     }
 }
 
-class UKShippingCalculator implements ShippingCalaulator {
+class UKShippingCalculator implements ShippingCalculator {
 
     @Override
-    void calculateShipping() {
+    public void calculateShipping() {
         // Code to calculate UK shipping...
     }
 }
 
-class INShippingCalculator implements ShippingCalaulator {
+class INShippingCalculator implements ShippingCalculator {
 
     @Override
-    void calculateShipping() {
+    public void calculateShipping() {
         // Code to calculate IN shipping...
     }
 }

@@ -1,4 +1,4 @@
-Interface ImageExporter {
+interface ImageExporter {
     void exportImage();
 }
 

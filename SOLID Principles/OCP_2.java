@@ -1,11 +1,11 @@
-Interface Discount {
-    void applyDiscount() {}
+interface Discount {
+    void applyDiscount();
 }
 
 class SeasonalDiscount implements Discount {
 
     @Override
-    void applyDiscount() {
+    public void applyDiscount() {
         // Code to apply seasonal discount...
     }
 }
@@ -13,7 +13,7 @@ class SeasonalDiscount implements Discount {
 class LoyaltyDiscount implements Discount {
 
     @Override
-    void applyDiscount() {
+    public void applyDiscount() {
         // Code to apply loyalty discount...
     }
 }
@@ -21,7 +21,7 @@ class LoyaltyDiscount implements Discount {
 class CouponDiscount implements Discount {
 
     @Override
-    void applyDiscount() {
+    public void applyDiscount() {
         // Code to apply coupon discount...
     }
 }
@@ -29,7 +29,7 @@ class CouponDiscount implements Discount {
 class ReferralDiscount implements Discount {
 
     @Override
-    void applyDiscount() {
+    public void applyDiscount() {
         // Code to apply referral discount...
     }
 }

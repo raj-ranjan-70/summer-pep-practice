@@ -1,5 +1,4 @@
 /* 
-
 Design a Login System that today uses email and password, but must later support Google OAuth and magic links - without changing the code that checks "Is this User logged In?" Keep the interface each provider implements minimal.
 */
 
@@ -40,18 +39,5 @@ class AuthService {
 
     void executeAuth(String email, String secret) {
         authentication.authenticate(email, secret);
-    }
-}
-
-class Main {
-
-    public static void main(String[] args) {
-    AuthService authService1 = new AuthService(new AuthenticationUsingPassword());
-    AuthService authService2 = new AuthService(new AuthenticationUsingToken());
-    AuthService authService3 = new AuthService(new AuthenticationUsingLinks());
-
-    authService1.executeAuth("raj@gmail.com", "Raj123");
-    authService2.executeAuth("raj@gmail.com", "jkw5efk-kj8c-n84erw");
-    authService3.executeAuth("raj@gmail.com", "https://raj.com?auth=raj-ranjan-70");
     }
 }

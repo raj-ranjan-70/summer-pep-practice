@@ -40,7 +40,7 @@ class ParsingCSV {
 }
 
 class FileValidator {
-    void vaidateFile() {
+    void validateFile() {
         // Code to validate the file...
     }
 }
