@@ -58,11 +58,3 @@ class MessageService {
         richTextMessage.sendMessage(user, subject, message);
     }
 }
-
-class Main {
-    public static void main(String[] args) {
-        MessageService msgService = new MessageService(new SMSMessage(), new SlackMessage());
-        msgService.textNotify("user1", "Hello, this is a text message.");
-        msgService.richTextNotify("user2", "Subject", "Hello, this is a rich text message.");
-    }
-}

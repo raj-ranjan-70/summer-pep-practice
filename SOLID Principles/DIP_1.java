@@ -1,12 +1,12 @@
-interface payment {
+interface payments {
     void pay();
 }
 
-interface Notification {
+interface Notifications {
     void send();
 }
 
-class StripePayment implements payment {
+class StripePayments implements payments {
     
     @Override
     public void pay() {
@@ -14,7 +14,7 @@ class StripePayment implements payment {
     }
 }
 
-class EmailNotification implements Notification {
+class EmailNotifications implements Notifications {
 
     @Override
     public void send() {
@@ -24,10 +24,10 @@ class EmailNotification implements Notification {
 
 class orderservice {
     
-    private payment paymentMethod;
-    private Notification notificationMethod;
+    private payments paymentMethod;
+    private Notifications notificationMethod;
 
-    public orderservice(payment paymentMethod, Notification notificationMethod) {
+    public orderservice(payments paymentMethod, Notifications notificationMethod) {
         this.paymentMethod = paymentMethod;
         this.notificationMethod = notificationMethod;
     }
