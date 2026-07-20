@@ -1,4 +1,4 @@
-package basicCodes;
+package com.basicCodes;
 
 public class Employee {
 
