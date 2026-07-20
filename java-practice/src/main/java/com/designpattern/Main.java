@@ -41,5 +41,14 @@ public class Main {
 
         AIModels heavyReasoning = ModelFactory.CreateModel("reasoning");
         heavyReasoning.useModel();
+
+        //Builder Design Pattern
+        UserBuilder userBuilder = new UserBuilder.Builder()
+                .setName("Raj")
+                .setAge(22)
+                .setEmail("rajranjan707077@gmail.com")
+                .build();
+
+        userBuilder.printDetails();
     }
 }
