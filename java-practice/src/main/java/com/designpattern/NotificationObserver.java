@@ -16,7 +16,8 @@ class StatusBar implements NotificationObserver {
     @Override
     public void notifySwitch() {
         System.out.println("-----The Status Bar-----");
-        System.out.println("Logging the Model Switch");
+        LoggerSingleton loggerSingleton = LoggerSingleton.getLoggerSingletonInstance();
+        loggerSingleton.log("Loggin the model Switch");
         System.out.println("Model Name: " + this.modelName);
         System.out.println("Cost Per Token: " + costPerToken);
     }
