@@ -12,4 +12,8 @@ public class LoggerSingleton {
         }
         return instance;
     }
+
+    public void log(String data) {
+        System.out.println("Log: Info: " + data);
+    }
 }

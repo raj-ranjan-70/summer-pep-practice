@@ -25,5 +25,21 @@ public class Main {
         channel.publish("Java Design Pattern");
         channel.unSubscribe(ankit);
         channel.publish("Java Spring Boot");
+
+        // Practice Mix of Singleton, Factory, Observer Design Pattern
+
+        APIKeyConfigSingleton apiKeyConfigSingleton = APIKeyConfigSingleton.getAPIKeyConfigSingletonObject();
+        apiKeyConfigSingleton.setAPI_KEY("qwerty-uiop-asdf-ghjk");
+        apiKeyConfigSingleton.setCurrentlyActiveModel("fast");
+        apiKeyConfigSingleton.setDefaultTemperature(0.9);
+
+        AIModels fastLightweight = ModelFactory.CreateModel("fast");
+        fastLightweight.useModel();
+
+        AIModels generalBalalced = ModelFactory.CreateModel("balanced");
+        generalBalalced.useModel();
+
+        AIModels heavyReasoning = ModelFactory.CreateModel("reasoning");
+        heavyReasoning.useModel();
     }
 }
