@@ -50,5 +50,23 @@ public class Main {
                 .build();
 
         userBuilder.printDetails();
+
+        // Singleton, Builder, Factory pattern Practice
+        CoffeeMachineSingleton coffeeMachineSingleton = CoffeeMachineSingleton.getInstance();
+        coffeeMachineSingleton.setMachinePowerStatus("ON");
+        coffeeMachineSingleton.setWaterTemperature(95.8);
+
+        DrinkFactory drinkFactory = new DrinkFactory(new Espresso());
+        drinkFactory.selectDrink();
+
+        CoffeeOrderBuilder coffeeOrderBuilder = new CoffeeOrderBuilder.CoffeeBuilder()
+                .setSize("Grande")
+                .setSugerAmount("2 Suger Cubes")
+                .setMilk("YES")
+                .setExtraShot("2 Extra Shot")
+                .buildOrder();
+
+        coffeeOrderBuilder.printOrderDetails();
+
     }
 }

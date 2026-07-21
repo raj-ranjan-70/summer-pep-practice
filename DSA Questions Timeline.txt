@@ -1,0 +1,37 @@
+Date - 23-06-2026
+
+Two-pointer Approach
+283. Move Zeroes
+125. Valid Palindrome
+977. Squares of a Sorted Array
+75. Sort Colors
+Dutch National Flag Algorithm
+
+Date - 24-06-2026
+Sliding Window
+2461 - Maximum Sum of Distinct Subarrays With Length K
+643 - Maximum Average Subarray I
+GFG - Max Sum Subarray of size K
+3. Longest Substring Without Repeating Characters
+904. Fruit Into Baskets
+
+Date - 25-06-2026
+1652. Defuse the Bomb
+485. Max Consecutive Ones
+
+Date - 26-06-2026
+1493 - 
+49. Group Anagrams
+1143. Longest Common Subsequence
+11. Container With Most Water
+
+Date - 29-06-2026
+1137. N-th Tribonacci Number
+70. Climbing Stairs
+50. Pow(x, n)
+
+
+
+
+
+
