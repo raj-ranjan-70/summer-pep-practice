@@ -1,44 +1,50 @@
 package com.raj.inmemorytaskmanagerbackend.controller;
 
-import com.raj.inmemorytaskmanagerbackend.Tasks;
+import com.fasterxml.jackson.annotation.OptBoolean;
+import com.raj.inmemorytaskmanagerbackend.model.Task;
+import com.raj.inmemorytaskmanagerbackend.service.TaskService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
-import static com.raj.inmemorytaskmanagerbackend.InmemorytaskmanagerbackendApplication.tasks;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/tasks")
 @CrossOrigin(origins = "http://localhost:5173/")
 public class TaskController {
 
-    @GetMapping("/get")
-    public Map<Integer, Tasks> getTasks() {
-        return tasks;
+    @Autowired
+    TaskService taskService;
+
+    @GetMapping("/getall")
+    public ResponseEntity<List<Task>> getTasks() {
+        return ResponseEntity.ok(taskService.getAllTasks());
     }
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<Task> getTask(@PathVariable Integer id) {
+        Optional<Task> task = Optional.ofNullable(taskService.getTask(id));
+        if(task.isPresent()) {
+            return ResponseEntity.ok(task.get());
+        }
+        return ResponseEntity.notFound().build();
+    }
+
 
     @PostMapping("/create")
-    public String createTasks(@RequestBody Tasks task) {
-        tasks.put(task.getId(), new Tasks(task.getId(), task.getTitle(), task.getDescription()));
-
-        return "Task is created";
+    public ResponseEntity<String> createTask(@RequestBody Task task) {
+        return ResponseEntity.ok(taskService.createTask(task));
     }
 
-    @PutMapping("/update")
-    public String updateTasks(@RequestBody Tasks task) {
-
-        if(tasks.isEmpty()) return "Hashmap is Empty... Insert some data first";
-        tasks.put(task.getId(), new Tasks(task.getId(), task.getTitle(), task.getDescription()));
-
-        return "Task is updated";
+    @PutMapping("/update/{id}")
+    public ResponseEntity<String> updateTask(@PathVariable Integer id) {
+        return ResponseEntity.ok(taskService.updateTask(id));
     }
 
-    @DeleteMapping("/delete")
-    public String deleteTasks(@RequestBody Tasks task) {
-
-        if(tasks.isEmpty()) return "Hashmap is Empty... Insert some data first";
-        tasks.remove(task.getId());
-
-        return "Task is deleted";
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteTask(@PathVariable Integer id) {
+        return ResponseEntity.ok(taskService.deleteTask(id));
     }
 }
